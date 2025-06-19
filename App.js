@@ -17,6 +17,22 @@ weatherApp.config(function ($routeProvider) {
 });
 
 // CONTROLLERS
-weatherApp.controller("homeController", ["$scope", function ($scope) {}]);
+weatherApp.controller("homeController", [
+  "$scope",
+  "cityNameService",
+  function ($scope, cityNameService) {
+    $scope.cityName = cityNameService.cityName;
+  },
+]);
 
-weatherApp.controller("forecastController", ["$scope", function ($scope) {}]);
+weatherApp.controller("forecastController", [
+  "$scope","cityNameService",
+  function ($scope, cityNameService) {
+    $scope.cityName1 = cityNameService.cityName;
+  },
+]);
+
+// CUSTOM SERVICE
+weatherApp.service("cityNameService", function () {
+  this.cityName = "London";
+});
