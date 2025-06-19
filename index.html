@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="weatherApp">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AngularJS Weather Forecast SPA</title>
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
     />
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script> -->
+    <script src="https://code.angularjs.org/snapshot-stable/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular-route.min.js"></script>
     <script src="https://code.angularjs.org/snapshot-stable/angular-resource.min.js"></script>
     <script src="App.js"></script>
@@ -24,13 +25,14 @@
 
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <a href="#"><i class="fa fa-home"></i> Home</a>
+              <a href="#!/home"><i class="fa fa-home"></i> Home</a>
             </li>
           </ul>
         </div>
       </nav>
     </header>
-
-    <div class="container"></div>
+    <div class="container">
+      <div ng-view></div>
+    </div>
   </body>
 </html>
