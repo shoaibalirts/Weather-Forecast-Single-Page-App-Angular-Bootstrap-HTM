@@ -21,8 +21,14 @@ weatherApp.controller("homeController", [
   "$scope",
   "cityNameService",
   function ($scope, cityNameService) {
-    $scope.cityName = cityNameService.cityName;
+    $scope.$watch('cityName', function(newValue,oldValue){
+      console.info("Old Value: "+oldValue);
+      console.info("New Value: "+newValue);
+     cityNameService.cityName = newValue; 
+    });
+     $scope.cityName = cityNameService.cityName;
   },
+
 ]);
 
 weatherApp.controller("forecastController", [
